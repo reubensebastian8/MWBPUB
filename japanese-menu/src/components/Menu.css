@@ -26,6 +26,7 @@ h1 {
   color: #d32f2f;
   font-weight: bold;
   font-family: 'Noto Serif JP', serif;
+  text-align: center;
 }
 
 .card:focus, article:focus, blockquote:focus {
