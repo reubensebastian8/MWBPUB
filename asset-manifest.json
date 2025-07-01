@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reubensebastian8.github.io/MWBPUB/static/css/main.a4bfdd0a.css",
+    "main.js": "/reubensebastian8.github.io/MWBPUB/static/js/main.83615084.js",
+    "static/js/453.63754f97.chunk.js": "/reubensebastian8.github.io/MWBPUB/static/js/453.63754f97.chunk.js",
+    "index.html": "/reubensebastian8.github.io/MWBPUB/index.html",
+    "main.a4bfdd0a.css.map": "/reubensebastian8.github.io/MWBPUB/static/css/main.a4bfdd0a.css.map",
+    "main.83615084.js.map": "/reubensebastian8.github.io/MWBPUB/static/js/main.83615084.js.map",
+    "453.63754f97.chunk.js.map": "/reubensebastian8.github.io/MWBPUB/static/js/453.63754f97.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4bfdd0a.css",
+    "static/js/main.83615084.js"
+  ]
+}
