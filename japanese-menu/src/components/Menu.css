@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+
 body {
   background-color: #f8f9fa;
   font-family: 'Georgia', serif;
@@ -14,18 +16,16 @@ body {
   transform: scale(1.05);
 }
 
-.card-title {
-  color: #343a40;
-  font-weight: bold;
-}
-
-.card-text {
-  color: #495057;
-}
-
 h1 {
-    color: #343a40;
+    color: #d32f2f;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-family: 'Noto Serif JP', serif;
+}
+
+.card-title {
+  color: #d32f2f;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .card:focus, article:focus, blockquote:focus {
@@ -48,4 +48,14 @@ blockquote {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+.menu-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.menu-section:last-of-type {
+  border-bottom: none;
 }
