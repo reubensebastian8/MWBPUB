@@ -72,9 +72,9 @@ const testimonials = [
 const Menu = () => {
   return (
     <main role="main" className="container mt-5">
-      <h1 className="text-center mb-4" tabIndex="0">Sumo Sushi - 本格日本料理 & 伝統中華料理</h1>
+      <h1 className="text-center mb-4" tabIndex="0">🍣 Sumo Sushi - 本格日本料理 & 伝統中華料理</h1>
       <section aria-labelledby="japanese-menu-heading" className="menu-section">
-        <h2 id="japanese-menu-heading" className="text-center mb-4">Japanese Menu (日本料理)</h2>
+        <h2 id="japanese-menu-heading" className="text-center mb-4">🍱 Japanese Menu (日本料理)</h2>
         <div className="row">
           {japaneseMenuItems.map((item, index) => (
             <article className="col-lg-4 col-md-6 mb-4" key={index} tabIndex="0" aria-label={item.name}>
@@ -90,7 +90,7 @@ const Menu = () => {
         </div>
       </section>
       <section aria-labelledby="chinese-menu-heading" className="menu-section">
-        <h2 id="chinese-menu-heading" className="text-center mb-4">Chinese Menu (中華料理)</h2>
+        <h2 id="chinese-menu-heading" className="text-center mb-4">🥢 Chinese Menu (中華料理)</h2>
         <div className="row">
           {chineseMenuItems.map((item, index) => (
             <article className="col-lg-4 col-md-6 mb-4" key={index} tabIndex="0" aria-label={item.name}>
@@ -106,7 +106,7 @@ const Menu = () => {
         </div>
       </section>
       <section aria-labelledby="testimonials-heading" className="mt-5">
-        <h2 id="testimonials-heading" className="text-center mb-4">お客様の声 (Customer Testimonials)</h2>
+        <h2 id="testimonials-heading" className="text-center mb-4">🌸 お客様の声 (Customer Testimonials)</h2>
         <div className="row justify-content-center">
           {testimonials.map((testimonial, idx) => (
             <blockquote className="col-md-8 mb-4" key={idx} tabIndex="0" aria-label={`Testimonial from ${testimonial.name}`} style={{borderLeft: '4px solid #343a40', paddingLeft: '1rem'}}>
@@ -117,7 +117,7 @@ const Menu = () => {
         </div>
       </section>
       <footer className="text-center mt-5">
-        <p><strong>Sumo Sushi</strong></p>
+        <p><strong>🏮 Sumo Sushi</strong></p>
         <p>123 Fake Street, Tokyo, Japan</p>
         <p>+81 123-456-7890</p>
         <p>&copy; 2025 Sumo Sushi. All Rights Reserved.</p>
