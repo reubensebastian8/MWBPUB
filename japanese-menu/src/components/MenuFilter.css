@@ -1,0 +1,8 @@
+.form-check-input:checked {
+    background-color: #b71c1c;
+    border-color: #b71c1c;
+}
+
+.form-check-label {
+    text-transform: capitalize;
+}
