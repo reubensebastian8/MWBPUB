@@ -86,26 +86,6 @@ h1::before, h2::before {
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column !important;
-  }
-  .col-lg-4, .col-md-6, .col-md-8 {
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-  .menu-section {
-    padding: 1rem 0.5rem;
-  }
-  h1, h2 {
-    font-size: 1.5rem;
-    padding-left: 2rem;
-  }
-  .card {
-    margin-bottom: 1.5rem;
-  }
-}
-
 @media (max-width: 480px) {
   h1, h2 {
     font-size: 1.1rem;

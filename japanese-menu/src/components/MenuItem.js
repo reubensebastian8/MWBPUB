@@ -1,7 +1,8 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 
 const MenuItem = ({ item }) => (
-  <article className="col-lg-4 col-md-6 mb-4" tabIndex="0" aria-label={item.name}>
+  <Col as="article" lg={4} md={6} className="mb-4" tabIndex="0" aria-label={item.name}>
     <div className="card h-100">
       <div className="card-body">
         <h3 className="card-title">
@@ -11,7 +12,7 @@ const MenuItem = ({ item }) => (
         <p className="card-text"><strong>{item.price}</strong></p>
       </div>
     </div>
-  </article>
+  </Col>
 );
 
 export default MenuItem;
