@@ -137,6 +137,31 @@ h1::before, h2::before {
   }
 }
 
+@media (max-width: 768px) {
+  .menu-header-btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .menu-btn-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .asian-download-btn,
+  .dark-toggle-btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .asian-download-btn {
+    margin-bottom: 0.5rem !important;
+  }
+  .dark-toggle-btn {
+    margin-bottom: 0 !important;
+  }
+}
+
 .calligraphy-header {
   font-family: 'Noto Serif JP', 'Yu Mincho', serif;
   background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%);

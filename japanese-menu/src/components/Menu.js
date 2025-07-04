@@ -71,53 +71,55 @@ const Menu = () => {
 
   return (
     <Container as={`main`} role="main" className={`mt-5${darkMode ? ' dark-mode' : ''}`}> 
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="menu-header-btns d-flex justify-content-between align-items-center mb-3">
         <h1 className="text-center mb-4 flex-grow-1" tabIndex="0">🍣 Sumo Sushi - 本格日本料理 & 伝統中華料理</h1>
-        <button
-          onClick={() => setDarkMode(dm => !dm)}
-          className="dark-toggle-btn ms-3"
-          aria-label="Toggle dark mode"
-          style={{
-            background: darkMode ? 'linear-gradient(90deg, #222 0%, #b71c1c 100%)' : 'linear-gradient(90deg, #ffd600 0%, #b71c1c 100%)',
-            color: darkMode ? '#ffe0b2' : '#fffbe7',
-            border: '2px solid #ffd600',
-            borderRadius: '2em',
-            fontWeight: 'bold',
-            fontSize: '1rem',
-            letterSpacing: '1px',
-            boxShadow: '0 2px 8px rgba(183,28,28,0.15)',
-            padding: '0.5em 1.3em',
-            outline: 'none',
-            transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5em',
-          }}
-        >
-          {darkMode ? '🌙 Light Mode' : '🌑 Dark Mode'}
-        </button>
-        <button
-          onClick={handleDownloadPDF}
-          className="asian-download-btn ms-3"
-          style={{
-            background: 'linear-gradient(90deg, #ffd600 0%, #b71c1c 100%)',
-            color: '#fffbe7',
-            border: '2px solid #ffd600',
-            borderRadius: '2em',
-            fontWeight: 'bold',
-            fontSize: '1rem',
-            letterSpacing: '1px',
-            boxShadow: '0 2px 8px rgba(183,28,28,0.15)',
-            padding: '0.5em 1.3em',
-            outline: 'none',
-            transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5em',
-          }}
-        >
-          <span role="img" aria-label="sushi">🍣</span> Download Menu
-        </button>
+        <div className="menu-btn-group d-flex flex-row flex-md-row flex-column align-items-end align-items-md-center ms-3">
+          <button
+            onClick={handleDownloadPDF}
+            className="asian-download-btn mb-2 mb-md-0"
+            style={{
+              background: 'linear-gradient(90deg, #ffd600 0%, #b71c1c 100%)',
+              color: '#fffbe7',
+              border: '2px solid #ffd600',
+              borderRadius: '2em',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              letterSpacing: '1px',
+              boxShadow: '0 2px 8px rgba(183,28,28,0.15)',
+              padding: '0.5em 1.3em',
+              outline: 'none',
+              transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5em',
+            }}
+          >
+            <span role="img" aria-label="sushi">🍣</span> Download Menu
+          </button>
+          <button
+            onClick={() => setDarkMode(dm => !dm)}
+            className="dark-toggle-btn ms-0 ms-md-3"
+            aria-label="Toggle dark mode"
+            style={{
+              background: darkMode ? 'linear-gradient(90deg, #222 0%, #b71c1c 100%)' : 'linear-gradient(90deg, #ffd600 0%, #b71c1c 100%)',
+              color: darkMode ? '#ffe0b2' : '#fffbe7',
+              border: '2px solid #ffd600',
+              borderRadius: '2em',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              letterSpacing: '1px',
+              boxShadow: '0 2px 8px rgba(183,28,28,0.15)',
+              padding: '0.5em 1.3em',
+              outline: 'none',
+              transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5em',
+            }}
+          >
+            {darkMode ? '🌙 Light Mode' : '🌑 Dark Mode'}
+          </button>
+        </div>
       </div>
       <MenuFilter 
         searchTerm={searchTerm}
