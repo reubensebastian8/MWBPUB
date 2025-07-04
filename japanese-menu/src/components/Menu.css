@@ -136,3 +136,38 @@ h1::before, h2::before {
     padding: 1rem 0.2rem 1rem 0.2rem;
   }
 }
+
+.calligraphy-header {
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%);
+  border: 2px solid #b71c1c;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(183,28,28,0.1);
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b71c1c;
+  text-shadow: 2px 2px 4px rgba(183,28,28,0.2);
+  margin: 0;
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+}
+.section-subtitle {
+  font-size: 1rem;
+  color: #bfa14a;
+  margin-left: 1rem;
+  font-style: italic;
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+}
+.item-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.item-name-jp {
+  font-size: 0.95rem;
+  color: #bfa14a;
+  margin-top: 0.1rem;
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+  letter-spacing: 0.05em;
+}

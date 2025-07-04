@@ -25,9 +25,12 @@ const MenuItem = ({ item }) => {
           style={{ outline: 'none' }}
         >
           <div className="d-flex align-items-center justify-content-between">
-            <h3 className="card-title mb-0">
-              {item.name} {item.recommended && <span className="badge bg-danger">Chef's Rec</span>}
-            </h3>
+            <div className="item-header">
+              <h3 className="card-title mb-0">
+                {item.name} {item.recommended && <span className="badge bg-danger">Chef's Rec</span>}
+              </h3>
+              {item.nameJP && <div className="item-name-jp">{item.nameJP}</div>}
+            </div>
             <span style={{ marginLeft: '0.5em', transition: 'transform 0.3s', display: 'inline-block', transform: expanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>
               ▶
             </span>

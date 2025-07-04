@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Row } from 'react-bootstrap';
 import MenuItem from './MenuItem';
 
-const MenuSection = ({ title, items, id }) => {
+const MenuSection = ({ title, subtitle, items, id }) => {
   const [expanded, setExpanded] = useState(true);
 
   return (
     <section aria-labelledby={id} className="menu-section">
       <button
         id={id}
-        className="menu-section-header text-center mb-4 d-flex align-items-center justify-content-center w-100"
+        className="menu-section-header calligraphy-header text-center mb-4 d-flex align-items-center justify-content-center w-100"
         aria-expanded={expanded}
         onClick={() => setExpanded(e => !e)}
         style={{
@@ -26,7 +26,10 @@ const MenuSection = ({ title, items, id }) => {
         <span style={{ marginRight: '0.5em', transition: 'transform 0.3s', display: 'inline-block', transform: expanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>
           ▶
         </span>
-        {title}
+        <div className="header-content">
+          <span className="section-title">{title}</span>
+          {subtitle && <span className="section-subtitle ms-2">{subtitle}</span>}
+        </div>
       </button>
       {expanded && (
         <Row>
