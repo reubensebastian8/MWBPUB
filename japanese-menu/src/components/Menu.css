@@ -86,6 +86,35 @@ h1::before, h2::before {
   border-bottom: none;
 }
 
+.menu-section-header {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.2s;
+  user-select: none;
+}
+.menu-section-header:focus, .menu-section-header:hover {
+  background: #ffe0b2;
+}
+.menu-section-header span {
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.card[role="button"] {
+  outline: none;
+}
+.card[role="button"]:focus, .card[role="button"]:hover {
+  box-shadow: 0 0 0 3px #ffd600;
+}
+
 @media (max-width: 480px) {
   h1, h2 {
     font-size: 1.1rem;
@@ -93,5 +122,9 @@ h1::before, h2::before {
   }
   .card-title {
     font-size: 1rem;
+  }
+  .menu-section-header {
+    font-size: 1.05rem;
+    padding: 1rem 0.2rem 1rem 0.2rem;
   }
 }

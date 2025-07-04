@@ -16,6 +16,7 @@ const Menu = () => {
     spicy: false,
     'nut-free': false
   });
+  const [dropdownTag, setDropdownTag] = useState('');
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -25,12 +26,17 @@ const Menu = () => {
     setFilters(prevFilters => ({ ...prevFilters, [filter]: !prevFilters[filter] }));
   };
 
+  const handleDropdownChange = (tag) => {
+    setDropdownTag(tag);
+  };
+
   const getFilteredItems = (items) => {
     return items.filter(item => {
       const activeFilters = Object.keys(filters).filter(f => filters[f]);
       const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesFilters = activeFilters.every(f => item.tags && item.tags.includes(f));
-      return matchesSearch && matchesFilters;
+      const matchesDropdown = dropdownTag === '' || (item.tags && item.tags.includes(dropdownTag));
+      return matchesSearch && matchesFilters && matchesDropdown;
     });
   };
 
@@ -43,6 +49,8 @@ const Menu = () => {
         onSearchChange={handleSearchChange}
         filters={filters}
         onFilterChange={handleFilterChange}
+        dropdownTag={dropdownTag}
+        onDropdownChange={handleDropdownChange}
       />
 
       <MenuSection 
