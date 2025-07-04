@@ -5,7 +5,7 @@ import './MenuFilter.css';
 import MenuSection from './MenuSection';
 import Testimonial from './Testimonial';
 import MenuFilter from './MenuFilter';
-import { japaneseMenuItems, chineseMenuItems, testimonials } from './menuData';
+import { menuSections, testimonials } from './menuData';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -54,20 +54,16 @@ const Menu = () => {
     });
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
-
-    // Calculate scale to fit both width and height
     const imgProps = pdf.getImageProperties(imgData);
     const imgWidth = imgProps.width;
     const imgHeight = imgProps.height;
     const widthScale = pageWidth / imgWidth;
     const heightScale = pageHeight / imgHeight;
     const scale = Math.min(widthScale, heightScale);
-
     const pdfWidth = imgWidth * scale;
     const pdfHeight = imgHeight * scale;
     const x = (pageWidth - pdfWidth) / 2;
     const y = (pageHeight - pdfHeight) / 2;
-
     pdf.addImage(imgData, 'PNG', x, y, pdfWidth, pdfHeight);
     pdf.save('menu.pdf');
   };
@@ -108,16 +104,14 @@ const Menu = () => {
         onDropdownChange={handleDropdownChange}
       />
       <div id="menu-content">
-        <MenuSection 
-          id="japanese-menu-heading"
-          title="🍱 Japanese Menu (日本料理)"
-          items={getFilteredItems(japaneseMenuItems)} 
-        />
-        <MenuSection 
-          id="chinese-menu-heading"
-          title="🥢 Chinese Menu (中華料理)"
-          items={getFilteredItems(chineseMenuItems)} 
-        />
+        {menuSections.map(section => (
+          <MenuSection
+            key={section.title}
+            id={section.title.replace(/\s+/g, '-').toLowerCase()}
+            title={section.title}
+            items={getFilteredItems(section.items)}
+          />
+        ))}
       </div>
       <section aria-labelledby="testimonials-heading" className="mt-5">
         <h2 id="testimonials-heading" className="text-center mb-4">🌸 お客様の声 (Customer Testimonials)</h2>
