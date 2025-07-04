@@ -6,6 +6,8 @@ import MenuSection from './MenuSection';
 import Testimonial from './Testimonial';
 import MenuFilter from './MenuFilter';
 import { japaneseMenuItems, chineseMenuItems, testimonials } from './menuData';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,10 +42,63 @@ const Menu = () => {
     });
   };
 
+  const handleDownloadPDF = async () => {
+    const input = document.getElementById('menu-content');
+    if (!input) return;
+    const canvas = await html2canvas(input, { scale: 2, backgroundColor: '#fff' });
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'pt',
+      format: 'a4',
+    });
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // Calculate scale to fit both width and height
+    const imgProps = pdf.getImageProperties(imgData);
+    const imgWidth = imgProps.width;
+    const imgHeight = imgProps.height;
+    const widthScale = pageWidth / imgWidth;
+    const heightScale = pageHeight / imgHeight;
+    const scale = Math.min(widthScale, heightScale);
+
+    const pdfWidth = imgWidth * scale;
+    const pdfHeight = imgHeight * scale;
+    const x = (pageWidth - pdfWidth) / 2;
+    const y = (pageHeight - pdfHeight) / 2;
+
+    pdf.addImage(imgData, 'PNG', x, y, pdfWidth, pdfHeight);
+    pdf.save('menu.pdf');
+  };
+
   return (
     <Container as="main" role="main" className="mt-5">
       <h1 className="text-center mb-4" tabIndex="0">🍣 Sumo Sushi - 本格日本料理 & 伝統中華料理</h1>
-      
+      <div className="d-flex justify-content-end align-items-center mb-3">
+        <button
+          onClick={handleDownloadPDF}
+          className="asian-download-btn"
+          style={{
+            background: 'linear-gradient(90deg, #ffd600 0%, #b71c1c 100%)',
+            color: '#fffbe7',
+            border: '2px solid #ffd600',
+            borderRadius: '2em',
+            fontWeight: 'bold',
+            fontSize: '1rem',
+            letterSpacing: '1px',
+            boxShadow: '0 2px 8px rgba(183,28,28,0.15)',
+            padding: '0.5em 1.3em',
+            outline: 'none',
+            transition: 'background 0.2s, box-shadow 0.2s, transform 0.2s',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5em',
+          }}
+        >
+          <span role="img" aria-label="sushi">🍣</span> Download Menu
+        </button>
+      </div>
       <MenuFilter 
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
@@ -52,19 +107,18 @@ const Menu = () => {
         dropdownTag={dropdownTag}
         onDropdownChange={handleDropdownChange}
       />
-
-      <MenuSection 
-        id="japanese-menu-heading"
-        title="🍱 Japanese Menu (日本料理)"
-        items={getFilteredItems(japaneseMenuItems)} 
-      />
-      
-      <MenuSection 
-        id="chinese-menu-heading"
-        title="🥢 Chinese Menu (中華料理)"
-        items={getFilteredItems(chineseMenuItems)} 
-      />
-
+      <div id="menu-content">
+        <MenuSection 
+          id="japanese-menu-heading"
+          title="🍱 Japanese Menu (日本料理)"
+          items={getFilteredItems(japaneseMenuItems)} 
+        />
+        <MenuSection 
+          id="chinese-menu-heading"
+          title="🥢 Chinese Menu (中華料理)"
+          items={getFilteredItems(chineseMenuItems)} 
+        />
+      </div>
       <section aria-labelledby="testimonials-heading" className="mt-5">
         <h2 id="testimonials-heading" className="text-center mb-4">🌸 お客様の声 (Customer Testimonials)</h2>
         <Row className="justify-content-center">
@@ -73,7 +127,6 @@ const Menu = () => {
           ))}
         </Row>
       </section>
-      
       <footer className="text-center mt-5">
         <p><strong>🏮 Sumo Sushi</strong></p>
         <p>123 Fake Street, Tokyo, Japan</p>

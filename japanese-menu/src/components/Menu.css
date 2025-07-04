@@ -115,6 +115,14 @@ h1::before, h2::before {
   box-shadow: 0 0 0 3px #ffd600;
 }
 
+.asian-download-btn:hover, .asian-download-btn:focus {
+  background: linear-gradient(90deg, #ffd600 0%, #b71c1c 100%);
+  color: #fffbe7;
+  box-shadow: 0 4px 16px #ffd60099, 0 2px 8px rgba(183,28,28,0.18);
+  transform: scale(1.025);
+  border-color: #ffd600;
+}
+
 @media (max-width: 480px) {
   h1, h2 {
     font-size: 1.1rem;
