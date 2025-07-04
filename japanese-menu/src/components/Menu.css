@@ -171,3 +171,51 @@ h1::before, h2::before {
   font-family: 'Noto Serif JP', 'Yu Mincho', serif;
   letter-spacing: 0.05em;
 }
+
+.dark-mode {
+  background-color: #18181a !important;
+  color: #ffe0b2 !important;
+}
+.dark-mode .menu-section {
+  background: rgba(30, 20, 20, 0.92);
+  border-bottom: 3px dashed #ffd600;
+  box-shadow: 0 2px 12px rgba(255,214,0,0.08);
+}
+.dark-mode .card {
+  background: linear-gradient(135deg, #23232b 80%, #3a1c1c 100%);
+  border: 2px solid #ffd600;
+  color: #ffe0b2;
+}
+.dark-mode .card-title,
+.dark-mode .section-title {
+  color: #ffd600;
+  text-shadow: 2px 2px 8px #b71c1c;
+}
+.dark-mode .section-subtitle {
+  color: #ffecb3;
+}
+.dark-mode .asian-download-btn,
+.dark-mode .dark-toggle-btn {
+  background: linear-gradient(90deg, #222 0%, #b71c1c 100%) !important;
+  color: #ffe0b2 !important;
+  border: 2px solid #ffd600 !important;
+}
+.dark-mode .asian-download-btn:hover,
+.dark-mode .asian-download-btn:focus,
+.dark-mode .dark-toggle-btn:hover,
+.dark-mode .dark-toggle-btn:focus {
+  background: linear-gradient(90deg, #ffd600 0%, #b71c1c 100%) !important;
+  color: #b71c1c !important;
+  box-shadow: 0 4px 16px #ffd60099, 0 2px 8px rgba(183,28,28,0.18);
+}
+.dark-mode .badge.bg-danger {
+  background-color: #ffd600 !important;
+  color: #b71c1c !important;
+}
+.dark-mode .badge.bg-secondary,
+.dark-mode .badge.bg-success,
+.dark-mode .badge.bg-info,
+.dark-mode .badge.bg-warning,
+.dark-mode .badge.bg-primary {
+  color: #23232b !important;
+}
